@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PE_CarBooking</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_car_booking_req">CarBookingReqActivity</string>
+    <string name="title_activity_car_booking_list">CarBookingListActivity</string>
+</resources>

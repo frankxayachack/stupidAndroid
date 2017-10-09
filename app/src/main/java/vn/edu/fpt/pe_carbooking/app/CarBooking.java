@@ -1,6 +1,7 @@
 package vn.edu.fpt.pe_carbooking.app;
 
 import java.util.Date;
+import java.util.HashMap;
 
 /**
  * Created by co.anhbn on 11/24/2016.
@@ -157,5 +158,20 @@ public class CarBooking {
                 ", Place='" + Place + '\'' +
                 ", Status=" + Status +
                 '}';
+    }
+
+    public HashMap<String, String> toHashMap(){
+        HashMap<String, String> h = new HashMap<String, String>();
+        h.put("Bid", ""+BId);
+        h.put("StaffId", StaffId);
+        h.put("StaffName", StaffName);
+        h.put("Department", Department);
+        h.put("ReasonUse", ReasonUse);
+        h.put("ReqDate", ReqDate.toString());
+        h.put("ReqTime", ReqTime);
+        h.put("NoOfSeat", ""+NoOfSeat);
+        h.put("Place", Place);
+        h.put("Status", ""+Status);
+        return h;
     }
 }

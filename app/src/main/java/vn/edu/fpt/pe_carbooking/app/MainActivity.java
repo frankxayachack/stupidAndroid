@@ -1,17 +1,60 @@
 package vn.edu.fpt.pe_carbooking.app;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.DatePicker;
+
+import org.json.JSONArray;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.List;
 
 
 public class MainActivity extends Activity {
 
+    Button btnCarBookingRequest;
+    Button btnCarBookingList;
+    public static List<CarBooking> LstCars;
+    public static JSONArray carBookingJSONArray;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_car_booking_req);
+        setContentView(R.layout.activity_main);
+
+        LstCars = new ArrayList<CarBooking>();
+        carBookingJSONArray = new JSONArray();
+
+        btnCarBookingRequest = (Button)findViewById(R.id.btnCarBookingRequest);
+        btnCarBookingList = (Button)findViewById(R.id.btnCarBookingList);
+
+        btnCarBookingRequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this,CarBookingReqActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+        btnCarBookingList.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent myIntent = new Intent(MainActivity.this,CarBookingListActivity.class);
+                MainActivity.this.startActivity(myIntent);
+            }
+        });
+
+
     }
 
 
